@@ -1,0 +1,78 @@
+++ Bishop:
+Another example is provided by the oil flow data set. in which (for a given geometrical configuration of the gas, WOller, and oil phases) there are only two degrees
+of freedom of variability corresponding to the fraction of oil in the pipe and the fraction of water (the fraction of gas Ihen being determined). Ahhough the data space
+comprises 12 measuremenlS, a data set of points will lie close to a Iwo-dimensional
+manifold embedded within this space. In this case, the manifold comprises scveral
+distinct segments corresponding to different flow regimes. each such segment being
+a (noisy) continuous two-dimensional manifold.
+
+PCA is a technique used for dimensionality reduction, lossy data compression, feature extraction and data visualization (Jolliffe, 2002)
+
+Dada la matriz X: XxP, buscamos proyectar los datos en un espacio de dimension m<P mientras se maximiza la varianza de las proyecciones.
+Fig 12.2 Bishop (pag581)
+
+Empezamos con un ejemplo pequeño:
+Vamos a proyectar sobre un espacio de una dimension (m=1), obtenemos un vector u_1: 1xP y buscamos que u.T@u=1 (Vector unitario)
+
+
+La proyeccion que maximiza la varianza es un autovalor
+El auto-vector con mayor auto-valor es el PC1
+
+El resto de PC que mejor atrapan la varianza son las direcciones otrogonales a los auto-vectores que ya tenemos.
+
+Despues de aplicar SVD:
+B = X - X.mean(axis=0)
+U, sigma, VT = svd(B)
+
+U: cada columna es un autovector de B donde cada columna es mas importante que la siguiente
+sigma es diagonal e indica la importancia de cada auto-vector (son los auto-valores)
+
+SVD y PCA son matematicamente equivalentes cuando los datos están centrados
+
++++++++++++++++++++++++++++++++++++++
+PCA
+* ¿Que es?
+tecnica de reduccion de dimensionalidad
+Datos con 100 features ingraficable, a 2 features que capturan muy bien los datos
+R^n -> magia PCA -> R^2
+
+* ¿Como funciona esa magia?
+
+* ¿Relacion con SVD?
+Ya sabemos que un PC es S*w = l*w
+O tambien que cada uno de los PC es S*W = l*W
+(Consultar si l es matriz diagonal)
+
+Si yo calculo B^T B en terminos de SVD
+B = U D V^T
+
+Al calcular B^T B = (U D V^T)^T (U D V^T) = V D^2 V^T
+Entonces:
+B^T B = V D^2 V^T -> (B^T B)V = V D^2
+Es lo mismo que calcular la matriz autovectores de
+(B^T B)
+Entonces las columnas de V son los autovectores y por lo tanto tambien son los PC
+El cuadrado de cada valor singular es la varianza de cada PC (\sigma **2)
+Al resolver un SVD estoy hallando lo que PCA necesita
+V: direcciones principales
+(D**2) / (n-1): varianza atrapada por cada PC
+Z=BV=UD: coordenadas proyectadas
+
+
+* ¿Cuando aplicar?
+Funciona mejor cuando hay muchas variables muy relacionadas entre si, se puede reducir varias dimensiones a un espacio independiente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
