@@ -6,7 +6,7 @@ manifold embedded within this space. In this case, the manifold comprises scvera
 distinct segments corresponding to different flow regimes. each such segment being
 a (noisy) continuous two-dimensional manifold.
 
-PCA is a technique used for dimensionality reduction, lossy data compression, feature extraction and data visualization (Jolliffe, 2002)
+PCA is a technique used for dimensionality reduction, lossy data compression, feature extraction and data visualization (Jolliffe, 2002), and Matrix Completion
 
 Dada la matriz X: XxP, buscamos proyectar los datos en un espacio de dimension m<P mientras se maximiza la varianza de las proyecciones.
 Fig 12.2 Bishop (pag581)
