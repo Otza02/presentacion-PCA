@@ -1,8 +1,7 @@
 ++ Bishop:
 Another example is provided by the oil flow data set. in which (for a given geometrical configuration of the gas, WOller, and oil phases) there are only two degrees
 of freedom of variability corresponding to the fraction of oil in the pipe and the fraction of water (the fraction of gas Ihen being determined). Ahhough the data space
-comprises 12 measurements, a data set of points will lie close to a two-dimensional
-manifold embedded within this space. In this case, the manifold comprises scveral
+comprises 12 measurements, a data set of points will lie close to a two-dimensional manifold embedded within this space. In this case, the manifold comprises several
 distinct segments corresponding to different flow regimes. each such segment being
 a (noisy) continuous two-dimensional manifold.
 
